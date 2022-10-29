@@ -12,9 +12,9 @@
 </p>
 
 <p align="center">
-  <img alt="activity" src="https://img.shields.io/github/last-commit/Nyyu/ignite-rocketseat?labelColor=121214&color=%2349AA26" />
+  <img alt="activity" src="https://img.shields.io/github/last-commit/Nyyu/basic-crud?labelColor=121214&color=%2349AA26" />
   &nbsp;
-  <img alt="activity" src="https://img.shields.io/github/commit-activity/w/Nyyu/ignite-rocketseat?labelColor=121214&color=%2349AA26" />
+  <img alt="activity" src="https://img.shields.io/github/commit-activity/w/Nyyu/basic-crud?labelColor=121214&color=%2349AA26" />
   &nbsp;
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=121214" />
 </p>
