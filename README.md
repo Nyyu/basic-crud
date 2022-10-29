@@ -21,8 +21,6 @@
 
 ## 🚀 Stack
 
-<br />
-
 #### Front-end
 
 ###### Base
