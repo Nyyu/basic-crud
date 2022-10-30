@@ -13,17 +13,15 @@ import {
 
 export const Root = ({
   children,
-  asChild = false,
   variant = "fill",
   className = "",
 }: ButtonRootProps) => {
   // Obs. if slot is used, styling resets
-  const RootElement = asChild ? Slot : StyledButton
 
   return (
-    <RootElement variant={variant} className={className}>
+    <StyledButton variant={variant} className={className}>
       {children}
-    </RootElement>
+    </StyledButton>
   )
 }
 

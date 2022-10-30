@@ -16,7 +16,7 @@ export const InputBody = w.input(
   `focus:outline-none w-full h-full`,
   {
     variants: {
-      size: {
+      variant: {
         lg: "placeholder:text-2xl",
         md: "placeholder:text-xl",
         sm: "placeholder:text-lg",

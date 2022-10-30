@@ -51,7 +51,9 @@ export default function Home({ products = [] }: HomeProps) {
             <Input.Icon>
               <MagnifyingGlass size={25} weight="regular" />
             </Input.Icon>
-            <Input.Body>Search</Input.Body>
+            <Input.Body registerFunction={() => {}} name="">
+              Search
+            </Input.Body>
           </Input.Root>
 
           <div className="flex flex-wrap gap-4 md:gap-6 mt-6 justify-center">
@@ -63,7 +65,7 @@ export default function Home({ products = [] }: HomeProps) {
                 <Product.Root>
                   <Product.Image
                     src={`/product-image-0${
-                      (idx + 1) % 3
+                      (idx % 2) + 1
                     }.png`} // No backend image available, using fallback for now
                   />
                   <Product.Body

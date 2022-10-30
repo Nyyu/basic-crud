@@ -1,7 +1,6 @@
 import { InputHTMLAttributes, ReactNode } from "react"
 
-export interface InputRootProps
-  extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputRootProps {
   children: ReactNode
   asChild?: boolean
   variant?: "outline"
@@ -10,7 +9,10 @@ export interface InputRootProps
 export interface InputIconProps {
   children: ReactNode
 }
-export interface InputBodyProps {
-  children: string
-  size?: "lg" | "sm" | "md"
+export interface InputBodyProps
+  extends InputHTMLAttributes<HTMLInputElement> {
+  variant?: "lg" | "sm" | "md"
+  registerFunction: any
+  name: string
+  children: ReactNode
 }

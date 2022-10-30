@@ -1,18 +1,13 @@
-import { useForm } from "react-hook-form"
-
-import { Button } from "../../../components/Button"
-import { Input } from "../../../components/Input"
-import { Heading } from "../../../components/Heading"
-import { Navbar } from "../../../components/Navbar"
-
-// icons
 import { PaperPlaneTilt } from "phosphor-react"
+import { useForm } from "react-hook-form"
+import { Button } from "../../../components/Button"
 
-// types
+import { Heading } from "../../../components/Heading"
+import { Input } from "../../../components/Input"
+import { Navbar } from "../../../components/Navbar"
 import { TProduct } from "../../../types/product"
-import { publicApi } from "../../../services/api"
 
-const Create = () => {
+const Update = () => {
   const {
     register,
     handleSubmit,
@@ -20,7 +15,7 @@ const Create = () => {
   } = useForm<TProduct>()
 
   const onSubmit = async (data: TProduct) => {
-    await publicApi.post("/product", data)
+    console.log(data)
   }
   return (
     <div className="min-h-screen max-w-[430px] mx-auto px-[21px] py-[46px]">
@@ -80,4 +75,4 @@ const Create = () => {
   )
 }
 
-export default Create
+export default Update

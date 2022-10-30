@@ -41,10 +41,20 @@ export const Icon = ({ children }: InputIconProps) => {
 }
 
 export const Body = ({
-  children,
-  size = "md",
+  children = "",
+  variant = "md",
+  registerFunction = () => {},
+  name,
+  ...props
 }: InputBodyProps) => {
-  return <InputBody size={size} placeholder={children} />
+  const placeholderValue = String(children)
+  return (
+    <InputBody
+      variant={variant}
+      placeholder={placeholderValue}
+      {...registerFunction(name)}
+    />
+  )
 }
 
 export const Input = {
