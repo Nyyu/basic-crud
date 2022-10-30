@@ -12,4 +12,5 @@ export interface InputIconProps {
 }
 export interface InputBodyProps {
   children: string
+  size?: "lg" | "sm" | "md"
 }

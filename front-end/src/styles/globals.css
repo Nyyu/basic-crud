@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.product-dropshadow {
+  box-shadow: 0px 0px 0px 0px rgba(33, 33, 33, 0.07),
+    1px 2px 5px 0px rgba(33, 33, 33, 0.07),
+    3px 9px 10px 0px rgba(33, 33, 33, 0.06),
+    6px 21px 13px 0px rgba(33, 33, 33, 0.04),
+    12px 37px 15px 0px rgba(33, 33, 33, 0.01),
+    18px 58px 17px 0px rgba(33, 33, 33, 0);
+}
+
+.product-dropshadow-secondary {
+  box-shadow: 0px 0px 0px 0px rgba(33, 33, 33, 0.07),
+    1px 2px 5px 0px rgba(33, 33, 33, 0.06),
+    3px 9px 10px 0px rgba(33, 33, 33, 0.03);
+}

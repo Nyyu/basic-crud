@@ -33,15 +33,18 @@ const Root = ({
 export const Icon = ({ children }: InputIconProps) => {
   return (
     <Slot
-      className={`max-w-[25px] max-h-[25px] text-inherit`}
+      className={`max-w-[25px] max-h-[25px] text-zinc-800/40`}
     >
       {children}
     </Slot>
   )
 }
 
-export const Body = ({ children }: InputBodyProps) => {
-  return <InputBody placeholder={children} />
+export const Body = ({
+  children,
+  size = "md",
+}: InputBodyProps) => {
+  return <InputBody size={size} placeholder={children} />
 }
 
 export const Input = {
