@@ -8,7 +8,8 @@
 
 <p align="center">
   <a href="#-stack">Stack</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-license">License</a>
+  <a href="#memo-license">License</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#figma">Figma file</a> 
 </p>
 
 <p align="center">
@@ -47,6 +48,10 @@
 - [Typescript](https://www.typescriptlang.org/)
 
 <br />
+
+## Figma
+
+- [Components](https://www.figma.com/file/M7xVtTyFzx9t6AOmeURyPn/Simple-C.R.U.D.-thingy?node-id=0%3A1)
 
 ## :memo: License
 
