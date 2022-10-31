@@ -32,6 +32,7 @@
 ###### Styling
 
 - [Tailwind](https://tailwindcss.com)
+- [Windstitch](https://windstitch.vercel.app)
 
 <br />
 
