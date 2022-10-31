@@ -28,7 +28,6 @@
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
 - [Next](https://nextjs.org/)
-- [Vite](https://vitejs.dev/)
 
 ###### Styling
 
