@@ -21,8 +21,9 @@ export class Product implements productRepository {
     } catch (err) {
       console.log(err)
       await prisma.$disconnect()
-      process.exit(1)
+      // process.exit(1)
     }
+    return []
   }
 
   // Fetch a single product
@@ -41,7 +42,13 @@ export class Product implements productRepository {
     } catch (error) {
       console.log(error)
       await prisma.$disconnect()
-      process.exit(1)
+      // process.exit(1)
+    }
+    return {
+      name: "",
+      description: "",
+      price: 0,
+      stock: 0,
     }
   }
 
@@ -55,12 +62,14 @@ export class Product implements productRepository {
     await prisma.$connect()
 
     try {
+      const formattedPrice = +price
+      const formattedStock = +stock
       const product = (await prisma.product.create({
         data: {
           name,
           description,
-          price,
-          stock,
+          price: formattedPrice,
+          stock: formattedStock,
         },
       })) as any
 
@@ -68,7 +77,6 @@ export class Product implements productRepository {
     } catch (error) {
       console.log(error)
       await prisma.$disconnect()
-      process.exit(1)
     }
   }
 
@@ -94,7 +102,6 @@ export class Product implements productRepository {
     } catch (error) {
       console.log(error)
       await prisma.$disconnect()
-      process.exit(1)
     }
   }
 
@@ -111,7 +118,6 @@ export class Product implements productRepository {
     } catch (error) {
       console.log(error)
       await prisma.$disconnect()
-      process.exit(1)
     }
   }
 }

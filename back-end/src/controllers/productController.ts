@@ -21,10 +21,10 @@ export const getProducts = async (
     const products: productModel[] =
       await productController.getMany()
 
-    return res.status(200).json(products)
+    res.status(200).json(products)
   } catch (error: any) {
     console.error(error)
-    return res.status(400).json({
+    res.status(400).json({
       error: `Query error`,
       "more-info":
         typeof error?.message === "string"
@@ -64,12 +64,12 @@ export const registerProduct = async (
       stock,
     })
 
-    return res
+    res
       .status(201)
       .json({ message: "product created successfully" })
   } catch (error: any) {
     console.error(error)
-    return res.status(400).json({
+    res.status(400).json({
       error: `Couldn't create product`,
       "more-info":
         typeof error?.message === "string"
@@ -97,10 +97,10 @@ export const getProduct = async (
   try {
     const product = await productController.get(id)
 
-    return res.status(200).json(product)
+    res.status(200).json(product)
   } catch (error: any) {
     console.error(error)
-    return res.status(400).json({
+    res.status(400).json({
       error: `Query error`,
       "more-info":
         typeof error?.message === "string"
@@ -127,12 +127,12 @@ export const deleteProduct = async (
   try {
     await productController.delete(id)
 
-    return res
+    res
       .status(200)
       .json({ message: "product deleted successfully" })
   } catch (error: any) {
     console.error(error)
-    return res.status(400).json({
+    res.status(400).json({
       error: `Product with ID ${id} does not exist in the database`,
       "more-info":
         typeof error?.message === "string"
@@ -163,6 +163,7 @@ export const updateProduct = async (
     if (req.body[key]) newValues[key] = req.body[key]
   })
 
+  // Just to make sure nothing is missing from the request
   const product = await productController.get(id)
 
   try {
@@ -175,11 +176,11 @@ export const updateProduct = async (
       newProduct
     )
 
-    return res.status(200).json(productResponse)
+    res.status(200).json(productResponse)
   } catch (error: any) {
     console.error(error)
-    return res.status(400).json({
-      error: `Product with ID ${id} does not exist in the database`,
+    res.status(400).json({
+      error: `Product with ID ${id} doesn't exist`,
       "more-info":
         typeof error?.message === "string"
           ? error.message

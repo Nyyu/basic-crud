@@ -11,6 +11,7 @@ import { PaperPlaneTilt } from "phosphor-react"
 // types
 import { TProduct } from "../../../types/product"
 import { publicApi } from "../../../services/api"
+import { toast } from "react-toastify"
 
 const Create = () => {
   const {
@@ -20,7 +21,12 @@ const Create = () => {
   } = useForm<TProduct>()
 
   const onSubmit = async (data: TProduct) => {
-    await publicApi.post("/product", data)
+    try {
+      await publicApi.post("/product", data)
+      toast.success("Product created successfully")
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <div className="min-h-screen max-w-[430px] mx-auto px-[21px] py-[46px]">
@@ -65,7 +71,7 @@ const Create = () => {
             </Input.Body>
           </Input.Root>
 
-          <Button.Root type="reset">
+          <Button.Root type="submit">
             <Button.Icon>
               <PaperPlaneTilt size={25} />
             </Button.Icon>

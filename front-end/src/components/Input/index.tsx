@@ -52,6 +52,7 @@ export const Body = ({
     <InputBody
       variant={variant}
       placeholder={placeholderValue}
+      {...props}
       {...registerFunction(name)}
     />
   )

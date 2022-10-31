@@ -1,23 +1,26 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { api } from "../../../../services/api"
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   try {
-    if (!(req.method === "PUT"))
-      throw new Error("Only put requests are supported")
+    if (!(req.method === "PATCH"))
+      throw new Error("Only PATCH requests are supported")
 
-    // My backend checks if any of the values are invalid
+    Object.keys(req.body).forEach((key) => {
+      if (!req.body[key])
+        throw new Error(`Missing parameter ${key}`)
+    })
+
     const { id, name, description, price, stock } = req.body
 
-    api.put("/product", {
-      id,
+    await api.patch(`/product/${id}`, {
       name,
       description,
-      price,
-      stock,
+      price: +price,
+      stock: +stock,
     })
 
     return res.status(200).json("product updated")
